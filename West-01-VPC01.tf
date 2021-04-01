@@ -54,6 +54,9 @@ resource "aws_subnet" "Pri_Sub_02" {
 resource "aws_subnet" "Pub_Sub_01" {
   vpc_id     = aws_vpc.Test-VPC01.id
   cidr_block = "10.141.2.0/26"
+
+
+
   availability_zone = "us-west-1a"
   map_public_ip_on_launch = true
 
@@ -69,6 +72,17 @@ resource "aws_subnet" "Pub_Sub_02" {
 
   tags = {
     Name = "Pub_Sub_02_Test-VPC01"
+  }
+}
+
+resource "aws_subnet" "Pub_Sub_03" {
+  vpc_id     = aws_vpc.Test-VPC01.id
+  cidr_block = "10.141.2.128/26"
+  availability_zone = "us-west-1b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "Pub_Sub_03_Test-VPC01"
   }
 }
 
